@@ -12,9 +12,18 @@ namespace RoundRobinSO
 {
     public partial class Form1 : Form
     {
+        Competencia competencia;
+
         public Form1()
         {
             InitializeComponent();
+            competencia = new Competencia();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int numero = (int)numericUpDown1.Value;
+            competencia.mostrarPartidos(competencia.calcularLiga(numero), ref textBox1);
         }
     }
 }
